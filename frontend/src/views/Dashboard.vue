@@ -76,10 +76,11 @@ header{
 .col-md-2{
     background-color: #C62020;
 }
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+:root .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
     background-color: black;
 }
+
 .nav-pills .nav-link .active{
     background-color: black;
 }
