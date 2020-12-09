@@ -15,7 +15,6 @@
                 <b-form-input
                   id="input-1"
                   v-model="form.form_no"
-                  type="form"
                   required
                   placeholder="Enter form no"
                 ></b-form-input>
@@ -57,7 +56,7 @@
               class="others"
             >
               <b-form-input
-                id="input-2"
+                id="input-4"
                 v-model="form.othernames"
                 required
                 placeholder="Enter othernames"
@@ -86,7 +85,7 @@
               class="nation"
             >
               <b-form-input
-                id="input-"
+                id="input-6"
                 v-model="form.nationality"
                 required
                 placeholder="Enter Nationality"
@@ -107,6 +106,7 @@
                 v-model="form.state"
                 :options="state"
                 required
+                tex="Select State"
               ></b-form-select> </b-form-group
           ></b-col>
 
@@ -173,7 +173,7 @@
             </b-form-group>
           </b-col>
 
-          <b-co>
+          <b-col>
             <b-form-group
               id="input-group-39"
               label="Date of Birth:"
@@ -188,7 +188,7 @@
      placeholder="Choose a date"
            ></b-form-datepicker>
             </b-form-group>
-          </b-co>
+          </b-col>
 
           <b-col
             ><b-form-group
@@ -284,19 +284,21 @@
               label-for="input-17"
               class="trained"
             >
-              <b-form-checkbox
+              <b-form-radio
                 id="input-17"
+                name="tra"
                 v-model="form.train"
                 :options="train"
-                >Yes</b-form-checkbox
+                >Yes</b-form-radio
               >
-              <b-form-checkbox
+              <b-form-radio
                 id="input-99"
+                name="tra"
                 v-model="form.train"
                 :options="train"
               >
                 No
-              </b-form-checkbox>
+              </b-form-radio>
             </b-form-group>
           </b-col>
 
@@ -421,7 +423,7 @@
           <b-col>
             <b-form-group
               id="input-group-23"
-              label="Name of Grantor"
+              label="Name of Guarantor"
               label-for="input-23"
               class="grantor"
             >
@@ -445,11 +447,11 @@
                 id="input-24"
                 v-model="form.addressgrantor"
                 required
-                placeholder="Enter Grantor Address"
+                placeholder="Enter Guarantor Address"
               ></b-form-input>
             </b-form-group>
           </b-col>
-
+      <b-col>
           <b-form-group
             id="input-group-25"
             label="Phone of Guarantor"
@@ -463,11 +465,12 @@
               placeholder="Enter Phone No "
             ></b-form-input>
           </b-form-group>
+      </b-col>
 
           <b-col>
             <b-form-group
               id="input-group-26"
-              label="Email Address for Grantor"
+              label="Email Address for Guarantor"
               label-for="input-26"
               class="gran"
             >
@@ -553,13 +556,13 @@
 
           <b-col>
             <b-form-group
-              id="input-group-31"
+              id="input-group-40"
               label="Bank Name"
-              label-for="input-31"
+              label-for="input-40"
               class="bankname"
             >
               <b-form-input
-                id="input-8"
+                id="input-40"
                 v-model="form.bankname"
                 required
                 placeholder="Enter Bank Name"
@@ -587,11 +590,11 @@
             <b-form-group
               id="input-group-33"
               label="Name of Training Centre"
-              label-for="input-32"
+              label-for="input-33"
               class="center"
             >
               <b-form-input
-                id="input-32"
+                id="input-33"
                 v-model="form.centre"
                 required
                 placeholder="Name of Training Centre"
@@ -621,6 +624,8 @@
           >Register</b-button
         >
       </b-form>
+      <br>
+      
     </div>
   </div>
 </template>
@@ -648,7 +653,7 @@ export default {
       show: true,
       form_no:[], surname:[], firstname:[], othernames:[], nationality:[],
       town:[], email:[], emailadd:[],
-      gender: ["male", "female"],
+      gender: ["Male", "Female"],
       status:["Single", "Married", "Others"],
        disable:[],
       specify:[],
@@ -657,10 +662,14 @@ export default {
       trainee:[],
       where:[],
       work:[],
+      trained:[],
       
 
       
     };
+  },
+  validations:{
+
   },
   created() {
     console.log(state);
@@ -673,12 +682,16 @@ export default {
       )[0].state.locals;
     },
   },
+
+
+
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
       alert(JSON.stringify(this.form));
     },
   },
+
 };
 </script>
 <style scoped>
@@ -696,23 +709,38 @@ export default {
 }
 h1 {
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight:900 ;
 }
 
 .title {
   background: white;
-  text-align: left;
+  text-align: justify;
+ 
+  
 }
 .btn {
-  text-align: center;
+  
   margin-top: 10px;
 }
 .bv-example-row {
   padding-top: 20px;
+  
 }
 textarea{
   width: 100%;
   margin: 15px 0px;
+  box-shadow: 0 0 8px #e3e3e3 inset;
+  border-color: #e3e3e3;
+  border: 1px solid #e2e2e2;
+  line-height: 50px;
   
 }
+.b-form-group{
+  box-shadow: 0 0 8px #e3e3e3 inset;
+  border-color: #e3e3e3;
+  border: 1px solid #e2e2e2;
+}
+
 </style>
+  
