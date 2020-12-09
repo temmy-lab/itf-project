@@ -12,8 +12,10 @@ Vue.use(IconsPlugin);
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
+import Vuelidate from "vuelidate"
 
 Vue.config.productionTip = false;
+Vue.use(Vuelidate);
 
 new Vue({
   router,
