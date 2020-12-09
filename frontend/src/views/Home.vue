@@ -1,8 +1,8 @@
 <template>
-  <div class="mt-5 " id="login">
+  <div class="mt-5">
     <b-form @submit="onSubmit">
-     <img alt="Itf logo" src="../assets/itf_log.png">
-      <b-form-group id="input-group-1" label="Username:"  label-for="input-1">
+      <b-avatar src="https://placekitten.com/300/300" size="6rem"></b-avatar>
+      <b-form-group id="input-group-1" label="Username:" label-for="input-1">
         <b-form-input
           id="input-1"
           v-model="form.username"
@@ -12,7 +12,7 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-2"  label="Password:" label-for="input-2">
+      <b-form-group id="input-group-2" label="Password:" label-for="input-2">
         <b-form-input
           id="input-2"
           v-model="form.password"
@@ -44,5 +44,4 @@ export default {
     }
   }
 };
-
 </script>
