@@ -3,7 +3,10 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Dashboard from "../views/Dashboard.vue";
-import Programs from "../views/Programs.vue"
+import DashboardHome from "../views/Dashboard/Dashboard.vue";
+import TraineeList from "../views/Dashboard/TraineeList.vue";
+import Registeration from "../views/Dashboard/Registeration.vue";
+import Programs from "../views/Dashboard/Programs.vue"
 
 Vue.use(VueRouter);
 
@@ -21,12 +24,27 @@ const routes = [
   {
     path: "/user/dashboard",
     name: "Dashboard",
-    component: Dashboard
-  },
-  {
-    path: "/programs",
-    name: "Programs",
-    component: Programs,
+    redirect: "/user/dashboard/home",
+    component: Dashboard,
+    children: [
+      {
+        path: "/user/dashboard/home",
+        component:  DashboardHome
+      },
+      {
+        path: "/user/dashboard/trainee-list",
+        component: TraineeList
+      },
+      {
+        path: "/user/dashboard/programs",
+        component: Programs
+      },
+      {
+        path: "/user/dashboard/registeration",
+        component: Registeration
+      },
+      
+    ]
   },
 ];
 

@@ -7,12 +7,10 @@
         <i class="fas fa-bars" id="sidebar_btn"></i>
       </label>
       <div class="left_area">
-        <h3>ITF <span>Management</span></h3>
+        <h3>Industrial Training <span>Fund</span></h3>
       </div>
       <div class="right_area">
-         <span class="logout_btn">Ibadan Area Office
-       <a href="" class="logout"><i class="fas fa-sign-out-alt"></i></a>
-        </span>
+        <a href="#" class="logout_btn">Logout</a>
       </div>
     </header>
     <!--header area end-->
@@ -22,16 +20,15 @@
         <img src="../assets/itf_log.png" class="profile_image" alt="">
         <h4>Industrial Training Fund</h4>
       </center>
-      <router-link to="/user/dashboard/home"><i class="fas fa-desktop"></i><span>Dashboard</span></router-link>
-      <router-link to="/user/dashboard/programs"><i class="fas fa-cogs"></i><span>Programs</span></router-link>
-      <router-link to="/user/dashboard/trainee-list"><i class="fas fa-table"></i><span>Trainee List</span></router-link>
-      <router-link to="/user/dashboard/registeration"><i class="fas fa-th"></i><span>Registeration</span></router-link>
+      <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+      <a href="#"><i class="fas fa-cogs"></i><span>Programs</span></a>
+      <a href="#"><i class="fas fa-table"></i><span>Trainee List</span></a>
+      <a href="#"><i class="fas fa-th"></i><span>Registeration</span></a>
+      <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
     </div>
     <!--sidebar end-->
 
-    <div class="content">
-        <router-view></router-view>
-    </div>
+    <div class="content"></div>
 
   </body>
 </template>
@@ -48,29 +45,27 @@ body{
   padding: 0;
   font-family: "Roboto", sans-serif;
 }
-header {
-    position: fixed;
-    background: #22242A;
-    width: 100%;
-    height: 70px;
-    padding: 0px 20px 20px 20px;
+.header{
+  position: fixed;
+  background: #22242A;
+  padding: 20px;
+  width: 100%;
+  height: 30px;
 }
 
-.left_area h3{
+.left_area{
   color: #fff;
   margin: 0;
   text-transform: uppercase;
   font-size: 22px;
   font-weight: 900;
 }
-h3 {
-    display: block;
-    font-size: 1.17em;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
+h3{
+    color: #2f323a;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 900;
 }
 .left_area span{
   color: #19B3D3;
@@ -78,31 +73,33 @@ h3 {
 
 .logout_btn{
   padding: 5px;
+  background: #19B3D3;
   text-decoration: none;
   float: right;
   margin-top: -30px;
   margin-right: 40px;
   border-radius: 2px;
-  font-size: 20px;
-  font-weight: 900;
+  font-size: 15px;
+  font-weight: 600;
   color: #fff;
   transition: 0.5s;
   transition-property: background;
 }
-.logout{
-    margin-left: 25px;
+
+.logout_btn:hover{
+  background: #0B87A6;
 }
 
 .sidebar {
-    background: #2f323a;
-    margin-top: 70px;
-    padding-top: 30px;
-    position: fixed;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    transition: 0.5s;
-    transition-property: left;
+  background: #2f323a;
+
+  padding-top: 30px;
+  position: fixed;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  transition: 0.5s;
+  transition-property: left;
 }
 
 .sidebar .profile_image{
@@ -148,7 +145,7 @@ label #sidebar_btn{
   cursor: pointer;
   left: 300px;
   font-size: 20px;
-  margin: 16px 0;
+  margin: 5px 0;
   transition: 0.5s;
   transition-property: color;
 }
@@ -178,7 +175,6 @@ label #sidebar_btn:hover{
   background-size: cover;
   height: 100vh;
   transition: 0.5s;
-  padding: 80px 20px 10px;
 }
 
 #check:checked ~ .content{

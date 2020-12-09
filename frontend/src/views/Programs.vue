@@ -60,6 +60,7 @@ export default {
 <style>
 .main{
   width: 80%;
+  background-color: black;
 }
 .program-title{
   padding: 2rem;
