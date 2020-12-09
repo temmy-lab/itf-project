@@ -356,6 +356,40 @@
               ></b-form-textarea>
             </b-form-group>
           </b-col>
+
+         <b-col>
+       <b-form-group
+              id="input-group-41"
+              label="Date :"
+              label-for="input-41"
+              class="dates"
+            >
+            
+           <b-form-datepicker
+      id="input-41"
+      v-model="form.dates"
+     required
+     placeholder="Date Registered"
+           ></b-form-datepicker>
+            </b-form-group></b-col>
+          <b-col>
+            <b-form-group
+              id="input-group-42"
+              label="Year:"
+              label-for="input-42"
+              class="year"
+            >
+              <b-form-input
+                id="input-42"
+                v-model="form.year"
+                required
+                placeholder="Enter Year"
+              ></b-form-input> </b-form-group
+          ></b-col> 
+
+
+
+
         </b-row>
       </b-container>
 
@@ -412,6 +446,8 @@
                 placeholder="Enter Email Address"
               ></b-form-input>
             </b-form-group>
+
+           
           </b-col>
         </b-row>
       </b-container>
@@ -641,8 +677,7 @@ export default {
         email: "", nationality: "", town:"", phoneno:"",emailadd:"",name: "", 
         state: "Abia State", localGov: "", gender: '', status:'',disable:"",
         specify:"", education:"", train:"", trainee:'', trained:'', where:"",
-        work:"", date:''
-        , kinname:'', kinphone:'', kinemail:'',
+        work:"", date:'', dates:"", year:"", kinname:'', kinphone:'', kinemail:'',
         grantor:'', addressgrantor:'', grantornumber:'', emailgrantor:'',
         beneficiary:'', code:'', account:'', amount:'', bankname:'', center: '',
         verified:'',
@@ -663,6 +698,7 @@ export default {
       where:[],
       work:[],
       trained:[],
+      dates:[], year:[],
       
 
       
